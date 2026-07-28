@@ -70,10 +70,7 @@
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
-  function setupCarousel() {
-    var root = document.getElementById("results-carousel");
-    if (!root) return;
-
+  function setupCarousel(root) {
     var viewport = root.querySelector(".carousel-viewport");
     var track = root.querySelector(".carousel-track");
     var slides = Array.prototype.slice.call(root.querySelectorAll(".carousel-slide"));
@@ -81,6 +78,12 @@
     var nextBtn = root.querySelector(".carousel-next");
     var dotsWrap = root.querySelector(".carousel-dots");
     if (!track || slides.length === 0) return;
+
+    if (slides.length === 1) {
+      if (prevBtn) prevBtn.style.display = "none";
+      if (nextBtn) nextBtn.style.display = "none";
+      if (dotsWrap) dotsWrap.style.display = "none";
+    }
 
     var index = 0;
 
@@ -144,6 +147,6 @@
     setupMobileNav();
     setupScrollReveal();
     setupFooterYear();
-    setupCarousel();
+    document.querySelectorAll("[data-carousel]").forEach(setupCarousel);
   });
 })();
