@@ -70,10 +70,65 @@
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
+  function setupCarousel() {
+    var root = document.getElementById("results-carousel");
+    if (!root) return;
+
+    var track = root.querySelector(".carousel-track");
+    var slides = Array.prototype.slice.call(root.querySelectorAll(".carousel-slide"));
+    var prevBtn = root.querySelector(".carousel-prev");
+    var nextBtn = root.querySelector(".carousel-next");
+    var dotsWrap = root.querySelector(".carousel-dots");
+    if (!track || slides.length === 0) return;
+
+    var index = 0;
+
+    slides.forEach(function (_, i) {
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot";
+      dot.setAttribute("aria-label", "Ir al resultado " + (i + 1));
+      dot.addEventListener("click", function () { goTo(i); });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll(".carousel-dot"));
+
+    function render() {
+      track.style.transform = "translateX(-" + index * 100 + "%)";
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("is-active", i === index);
+      });
+    }
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      render();
+    }
+
+    prevBtn.addEventListener("click", function () { goTo(index - 1); });
+    nextBtn.addEventListener("click", function () { goTo(index + 1); });
+
+    var touchStartX = null;
+    track.addEventListener("touchstart", function (e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener("touchend", function (e) {
+      if (touchStartX === null) return;
+      var delta = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) > 40) {
+        goTo(delta < 0 ? index + 1 : index - 1);
+      }
+      touchStartX = null;
+    });
+
+    render();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     setupWhatsAppLinks();
     setupMobileNav();
     setupScrollReveal();
     setupFooterYear();
+    setupCarousel();
   });
 })();

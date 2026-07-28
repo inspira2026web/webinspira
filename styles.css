@@ -164,12 +164,25 @@ h3 { font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 0.5rem; }
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.logo-mark {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: var(--c-grass);
+  border-radius: 0 70% 0 70%;
+  transform: rotate(-45deg);
+}
+.logo-word {
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--c-white);
 }
-.logo span { color: var(--c-grass); }
+.logo-dot { color: var(--c-grass); }
 
 .main-nav {
   display: flex;
@@ -239,12 +252,17 @@ h3 { font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 0.5rem; }
   background: linear-gradient(0deg, var(--c-black) 0%, rgba(10, 12, 9, 0.35) 55%, rgba(10, 12, 9, 0.55) 100%);
 }
 
-.hero-content {
+.hero-grid {
   position: relative;
   z-index: 1;
-  max-width: 780px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2.5rem;
   padding-block: 3rem;
 }
+
+.hero-content { max-width: 560px; }
 
 .hero h1 { color: var(--c-white); margin-bottom: 1.25rem; }
 
@@ -252,7 +270,13 @@ h3 { font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 0.5rem; }
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--c-muted);
   max-width: 560px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-area {
+  font-size: 0.85rem;
+  color: var(--c-muted-dark);
+  margin-bottom: 1.75rem;
 }
 
 .hero-actions {
@@ -261,29 +285,15 @@ h3 { font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 0.5rem; }
   gap: 1rem;
 }
 
-.scroll-cue {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 22px;
-  height: 36px;
-  border: 1.5px solid rgba(245, 246, 239, 0.4);
-  border-radius: 20px;
+.hero-photo {
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
 }
-.scroll-cue span {
-  display: block;
-  width: 4px;
-  height: 8px;
-  margin: 6px auto 0;
-  background: var(--c-grass);
-  border-radius: 3px;
-  animation: scrollcue 1.8s infinite;
-}
-@keyframes scrollcue {
-  0% { opacity: 1; transform: translateY(0); }
-  70% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 0; }
+
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
+  .hero-photo { max-width: none; margin-inline: 0; }
 }
 
 /* ---------- Sections generic ---------- */
@@ -418,6 +428,39 @@ h3 { font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 0.5rem; }
 }
 .diff-card p { color: var(--c-muted); font-size: 0.98rem; }
 
+.diff-cta {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+/* ---------- Photo placeholders (reused across sections) ---------- */
+.photo-slot {
+  position: relative;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(245, 246, 239, 0.25);
+  background:
+    repeating-linear-gradient(135deg, rgba(245, 246, 239, 0.035) 0 12px, transparent 12px 24px),
+    linear-gradient(160deg, var(--c-forest-light), var(--c-black-soft));
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+  overflow: hidden;
+}
+.photo-slot-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--c-black);
+  color: var(--c-grass);
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+}
+.photo-slot--wide { aspect-ratio: 16 / 9; }
+.photo-slot--portrait { aspect-ratio: 4 / 5; }
+
+.punto-b-photo { margin-top: 2.5rem; max-width: 900px; margin-inline: auto; }
+.cierre-photo { margin-bottom: 2rem; }
+
 /* ---------- Section 9: Prueba social ---------- */
 .stats-grid {
   margin-top: 2.5rem;
@@ -446,30 +489,68 @@ h3 { font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 0.5rem; }
   color: var(--c-muted);
 }
 
-.before-after {
-  margin-top: 2.5rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-}
-.ba-item {
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius);
-  border: 1px dashed rgba(245, 246, 239, 0.25);
-  background: repeating-linear-gradient(135deg, rgba(245,246,239,0.03) 0 12px, transparent 12px 24px);
+.stats-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+/* ---------- Carrusel de resultados ---------- */
+.carousel {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 0.75rem;
+  margin-top: 2.5rem;
+  padding-inline: 2rem;
 }
-.ba-tag {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.carousel-slide .photo-slot { border-radius: 0; }
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   background: var(--c-black);
-  color: var(--c-grass);
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
+  border: 1px solid rgba(245, 246, 239, 0.25);
+  color: var(--c-white);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+.carousel-arrow:hover { background: var(--c-grass); border-color: var(--c-grass); color: #0c1408; }
+.carousel-prev { left: 0; }
+.carousel-next { right: 0; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(245, 246, 239, 0.25);
+  transition: background var(--transition), transform var(--transition);
+}
+.carousel-dot.is-active { background: var(--c-grass); transform: scale(1.3); }
+
+@media (min-width: 640px) {
+  .carousel { padding-inline: 2.5rem; }
 }
 
 .testimonial-grid {
@@ -629,4 +710,7 @@ h3 { font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 0.5rem; }
 
   .split { grid-template-columns: 0.85fr 1.15fr; }
   .split-media { order: -1; }
+
+  .split-reverse { grid-template-columns: 1.15fr 0.85fr; }
+  .split-reverse .split-media { order: 1; }
 }

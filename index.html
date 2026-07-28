@@ -20,7 +20,11 @@
 <!-- ===================== HEADER / NAV ===================== -->
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a href="#top" class="logo">Inspira<span>.</span></a>
+    <!-- LOGO: reemplazar el bloque de abajo por <img src="assets/logo.svg" alt="Inspira Jardinería y Paisajismo" class="logo-img"> cuando esté el isotipo real -->
+    <a href="#top" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-word">Inspira<span class="logo-dot">.</span></span>
+    </a>
 
     <nav class="main-nav" id="main-nav">
       <a href="#problema" class="nav-link">El problema</a>
@@ -40,21 +44,26 @@
 
 <!-- ===================== 1. HERO ===================== -->
 <section id="hero" class="hero reveal">
-  <!-- IMG: reemplazar por foto real de Inspira (espacio verde transformado, alta resolución) -->
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
 
-  <div class="container hero-content">
-    <p class="eyebrow">Jardinería y paisajismo · Viviendas, consorcios, empresas y countries</p>
-    <h1>Tu espacio verde, transformado en el lugar que tu propiedad se merece</h1>
-    <p class="hero-sub">Puesta en valor y mantenimiento integral para quienes quieren disfrutar, mostrar y aprovechar su jardín como corresponde — no solo mantenerlo con vida.</p>
-    <div class="hero-actions">
-      <a href="#" class="btn btn-grass btn-large js-whatsapp" data-msg="Hola, quiero pedir un presupuesto sin cargo para mi espacio verde.">Pedir presupuesto sin cargo</a>
-      <a href="#problema" class="btn btn-ghost btn-large">Conocer el método</a>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow">Jardinería y paisajismo · Viviendas, consorcios, empresas y countries</p>
+      <h1>Tu espacio verde, transformado en el lugar que tu propiedad se merece</h1>
+      <p class="hero-sub">Puesta en valor y mantenimiento integral para quienes quieren disfrutar, mostrar y aprovechar su jardín como corresponde — no solo mantenerlo con vida.</p>
+      <p class="hero-area">Trabajamos en Santa Fe Capital, Sauce Viejo, Santo Tomé y alrededores.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-grass btn-large js-whatsapp" data-msg="Hola, quiero pedir un presupuesto sin cargo para mi espacio verde.">Pedir presupuesto sin cargo</a>
+        <a href="#problema" class="btn btn-ghost btn-large">Conocer el método</a>
+      </div>
+    </div>
+
+    <!-- IMG: reemplazar por foto real de Inspira (espacio verde transformado, alta resolución) -->
+    <div class="hero-photo photo-slot photo-slot--portrait" aria-hidden="true">
+      <span class="photo-slot-label">Foto: espacio transformado</span>
     </div>
   </div>
-
-  <div class="scroll-cue" aria-hidden="true"><span></span></div>
 </section>
 
 <!-- ===================== 2. PROBLEMA (Punto A) ===================== -->
@@ -78,7 +87,7 @@
   <div class="container narrow">
     <p class="kicker">Sin juicio, con claridad</p>
     <h2>No es que hayas hecho algo mal. Es que el método no era el correcto.</h2>
-    <p class="lead">Si ya probaste resolverlo antes y el resultado no duró, lo más probable es que el problema nunca haya sido tu jardín. Fue el enfoque.</p>
+    <p class="lead">Si ya probaste resolverlo antes y el resultado no duró, lo más probable es que el problema nunca haya sido tu jardín.</p>
 
     <div class="reason-list">
       <div class="reason-item">
@@ -112,8 +121,14 @@
     <p class="kicker">Lo que sí es posible</p>
     <h2>Imaginá tu espacio verde como el orgullo de tu propiedad</h2>
     <p class="lead">Imaginá salir a tu jardín y sentir orden, calma y ganas de quedarte. Césped parejo, canteros limpios, árboles cuidados: un espacio que da gusto habitar.</p>
-    <p class="lead">Visualizá tu consorcio, tu empresa o tu country con un espacio verde que da orgullo mostrar — no uno que hay que disculpar frente a vecinos, clientes o visitas.</p>
+    <p class="lead">Visualizá tu consorcio, tu empresa o tu jardín con un espacio verde que da orgullo mostrar — no uno que hay que disculpar frente a vecinos, clientes o visitas.</p>
     <p class="lead-emphasis">Eso es lo que trabajamos en Inspira: no un jardín "prolijo por un rato", sino un espacio en valor de forma sostenida.</p>
+  </div>
+  <div class="container">
+    <!-- IMG: reemplazar por foto real de un espacio en valor (jardín/consorcio prolijo) -->
+    <div class="punto-b-photo photo-slot photo-slot--wide" aria-hidden="true">
+      <span class="photo-slot-label">Foto: espacio en valor</span>
+    </div>
   </div>
 </section>
 
@@ -151,17 +166,25 @@
 
 <!-- ===================== 6. BENEFICIOS ===================== -->
 <section id="beneficios" class="section section-black reveal">
-  <div class="container">
-    <p class="kicker">Lo que vas a lograr</p>
-    <h2>Qué vas a lograr al trabajar con Inspira</h2>
+  <div class="container split split-reverse">
+    <div class="split-media" aria-hidden="true">
+      <!-- IMG: reemplazar por foto real de un espacio verde ya en valor -->
+      <div class="photo-slot photo-slot--portrait">
+        <span class="photo-slot-label">Foto: resultado del servicio</span>
+      </div>
+    </div>
+    <div class="split-text">
+      <p class="kicker">Lo que vas a lograr</p>
+      <h2>Qué vas a lograr al trabajar con Inspira</h2>
 
-    <ul class="benefit-list">
-      <li><span class="check">✓</span> Vas a tener un césped perfectamente cortado y perfilado, listo para disfrutar.</li>
-      <li><span class="check">✓</span> Vas a recuperar canteros limpios y aireados, sin maleza ni abandono.</li>
-      <li><span class="check">✓</span> Vas a lograr árboles y arbustos con poda prolija, que cuidan la salud de tu espacio verde.</li>
-      <li><span class="check">✓</span> Vas a tener tu espacio verde siempre ordenado, sin residuos ni desprolijidad.</li>
-      <li><span class="check">✓</span> Vas a poder mostrar y disfrutar tu propiedad como se merece.</li>
-    </ul>
+      <ul class="benefit-list">
+        <li><span class="check">✓</span> Vas a tener un césped perfectamente cortado y perfilado, listo para disfrutar.</li>
+        <li><span class="check">✓</span> Vas a recuperar canteros limpios y aireados, sin maleza ni abandono.</li>
+        <li><span class="check">✓</span> Vas a lograr árboles y arbustos con poda prolija, que cuidan la salud de tu espacio verde.</li>
+        <li><span class="check">✓</span> Vas a tener tu espacio verde siempre ordenado, sin residuos ni desprolijidad.</li>
+        <li><span class="check">✓</span> Vas a poder mostrar y disfrutar tu propiedad como se merece.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -222,6 +245,18 @@
         <h3>Prioridad de agenda para mantenimiento mensual</h3>
         <p>Consorcios y countries con mantenimiento recurrente tienen prioridad de agenda por sobre intervenciones puntuales.</p>
       </article>
+      <article class="diff-card">
+        <h3>Facturación en regla</h3>
+        <p>Estamos inscriptos en ARCA, así que podés contar con factura del servicio para tu vivienda, consorcio o empresa.</p>
+      </article>
+      <article class="diff-card">
+        <h3>Seguros personales vigentes</h3>
+        <p>Trabajamos con seguros personales al día, para tu tranquilidad y la del equipo en cada intervención.</p>
+      </article>
+    </div>
+
+    <div class="diff-cta">
+      <a href="#" class="btn btn-grass btn-large js-whatsapp" data-msg="Hola, quiero reservar mi visita con Inspira Jardinería y Paisajismo.">Reservar mi visita</a>
     </div>
   </div>
 </section>
@@ -232,7 +267,7 @@
     <p class="kicker">Resultados</p>
     <h2>Espacios verdes que ya pusimos en valor</h2>
 
-    <div class="stats-grid">
+    <div class="stats-grid stats-grid-2">
       <div class="stat-card">
         <span class="stat-number">+20</span>
         <span class="stat-label">Espacios verdes puestos en valor</span>
@@ -241,47 +276,52 @@
         <span class="stat-number">+5</span>
         <span class="stat-label">Clientes activos de mantenimiento mensual</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-number">↑</span>
-        <span class="stat-label">Facturación en crecimiento sostenido en los últimos 3 meses</span>
-      </div>
     </div>
 
-    <div class="before-after">
-      <!-- FOTO: reemplazar por grid real de antes/después de intervenciones de Inspira -->
-      <div class="ba-item">
-        <span class="ba-tag">Antes</span>
-        <!-- IMG: foto real "antes" -->
+    <!-- FOTOS: reemplazar cada slide por una foto real de resultados de Inspira -->
+    <div class="carousel" id="results-carousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <div class="photo-slot photo-slot--wide"><span class="photo-slot-label">Resultado 1</span></div>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-slot photo-slot--wide"><span class="photo-slot-label">Resultado 2</span></div>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-slot photo-slot--wide"><span class="photo-slot-label">Resultado 3</span></div>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-slot photo-slot--wide"><span class="photo-slot-label">Resultado 4</span></div>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-slot photo-slot--wide"><span class="photo-slot-label">Resultado 5</span></div>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-slot photo-slot--wide"><span class="photo-slot-label">Resultado 6</span></div>
+          </div>
+        </div>
       </div>
-      <div class="ba-item">
-        <span class="ba-tag">Después</span>
-        <!-- IMG: foto real "después" -->
-      </div>
-      <div class="ba-item">
-        <span class="ba-tag">Antes</span>
-        <!-- IMG: foto real "antes" -->
-      </div>
-      <div class="ba-item">
-        <span class="ba-tag">Después</span>
-        <!-- IMG: foto real "después" -->
-      </div>
+      <button type="button" class="carousel-arrow carousel-prev" aria-label="Resultado anterior">‹</button>
+      <button type="button" class="carousel-arrow carousel-next" aria-label="Resultado siguiente">›</button>
+      <div class="carousel-dots" role="tablist" aria-label="Seleccionar resultado"></div>
     </div>
 
     <div class="testimonial-grid">
       <blockquote class="testimonial-card">
         <!-- TESTIMONIO: reemplazar por testimonio real de cliente -->
-        <p>"Recuperamos un espacio que ya ni mirábamos. Ahora es lo primero que mostramos cuando alguien visita el consorcio."</p>
-        <cite>— Cliente de mantenimiento mensual, consorcio</cite>
+        <p>"Veníamos con el espacio común hecho un lío, entre la maleza y las hojas acumuladas. Después de un par de visitas de Inspira, los vecinos lo empezaron a comentar en las reuniones — para bien, por suerte."</p>
+        <cite>— Administración de consorcio, Santa Fe Capital</cite>
       </blockquote>
       <blockquote class="testimonial-card">
         <!-- TESTIMONIO: reemplazar por testimonio real de cliente -->
-        <p>"No es que corten el pasto. Es que se ocupan de todo el espacio como si fuera propio."</p>
-        <cite>— Cliente de vivienda particular</cite>
+        <p>"No es que corten el pasto y ya está. Se nota que le ponen cabeza al conjunto: la poda, los canteros, el orden general. Vale la pena."</p>
+        <cite>— Vecino de Sauce Viejo</cite>
       </blockquote>
       <blockquote class="testimonial-card">
         <!-- TESTIMONIO: reemplazar por testimonio real de cliente -->
-        <p>"El antes y el después habla solo. Vale cada peso invertido."</p>
-        <cite>— Cliente de country</cite>
+        <p>"Contratamos el mantenimiento mensual para la empresa y la diferencia se nota apenas entrás. Cumplen, avisan cuando van, y dejan todo prolijo."</p>
+        <cite>— Encargado de mantenimiento, Santo Tomé</cite>
       </blockquote>
     </div>
   </div>
@@ -298,6 +338,7 @@
       <p class="kicker">Nuestra historia</p>
       <h2>Por qué existe Inspira</h2>
       <p>Inspira nació de ver, una y otra vez, espacios verdes con potencial que nadie terminaba de aprovechar: jardines de casas, ingresos de consorcios, parques de countries — lugares que podían ser el orgullo de una propiedad y que en cambio quedaban relegados al abandono.</p>
+      <p>Somos Damián y Facundo. Tenemos herramientas y maquinaria propia, así que cuando llegamos a un espacio verde, llegamos preparados para hacer el trabajo completo — no a improvisar con lo que haya a mano.</p>
       <p>De ahí surgió la decisión de trabajar distinto: con un método integral, prolijo y sostenido en el tiempo, en lugar de visitas sueltas que resuelven una tarea y dejan el resto sin tocar.</p>
       <p>Cada espacio que ponemos en valor es un compromiso con el resultado final y con la persona que va a volver a disfrutarlo — no un trabajo más en la agenda.</p>
     </div>
@@ -318,9 +359,9 @@
         </div>
       </details>
       <details class="faq-item">
-        <summary>"Me parece elevado el precio"</summary>
+        <summary>"Quizás el precio es elevado por este servicio"</summary>
         <div class="faq-body">
-          <p>Lo entendemos, y por eso preferimos que la cotización surja de ver tu espacio real en la visita, no de un número genérico. Vale la pena compararlo contra el costo real de las soluciones parche: tareas que hay que repetir, arreglar o volver a contratar porque nunca resuelven el fondo. La integralidad y el seguimiento son justamente lo que evita ese gasto repetido.</p>
+          <p>Lo entendemos, pero quedate tranquilo/a. La cotización surge de ver tu espacio real en la visita, no de un número genérico. Vale la pena compararlo contra el costo real de las soluciones parche, tareas que hay que repetir, arreglar o volver a contratar porque nunca resuelven el fondo. La integralidad y el seguimiento son justamente lo que evita ese gasto repetido, y en Inspira nos caracterizamos por eso.</p>
         </div>
       </details>
     </div>
@@ -334,6 +375,11 @@
     <h2>Recuperá tu espacio verde y volvé a disfrutarlo en paz</h2>
     <p class="lead">Este es un servicio pensado para quienes buscan una transformación real de su espacio — no solo la tarifa más baja del mercado. Trabajamos con agenda limitada para poder sostener el nivel de detalle en cada propiedad que tomamos.</p>
 
+    <!-- IMG: reemplazar por foto real de un espacio verde en valor -->
+    <div class="photo-slot photo-slot--wide cierre-photo" aria-hidden="true">
+      <span class="photo-slot-label">Foto: espacio en valor</span>
+    </div>
+
     <a href="#" class="btn btn-grass btn-xl js-whatsapp" data-msg="Hola, quiero reservar mi visita con Inspira Jardinería y Paisajismo.">Reservar mi visita</a>
 
     <p class="closing-line">Un espacio verde en orden no es un lujo. Es la tranquilidad de tener, por fin, un lugar que da gusto mirar.</p>
@@ -346,15 +392,17 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <p class="logo footer-logo">Inspira<span>.</span></p>
+      <p class="logo footer-logo">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-word">Inspira<span class="logo-dot">.</span></span>
+      </p>
       <p>Jardinería y paisajismo — puesta en valor de espacios verdes.</p>
     </div>
 
     <div class="footer-contact">
       <p class="footer-heading">Agendá tu visita</p>
       <a href="#" class="footer-link js-whatsapp" data-msg="Hola, quiero reservar mi visita con Inspira Jardinería y Paisajismo.">WhatsApp: +54 9 3425 19-6247</a>
-      <!-- INSTAGRAM: reemplazar por el @handle real de Inspira Jardinería y paisajismo -->
-      <a href="https://instagram.com/inspira.jardineriaypaisajismo" class="footer-link" target="_blank" rel="noopener">Instagram: @inspira.jardineriaypaisajismo</a>
+      <a href="https://www.instagram.com/inspira.limpieza/" class="footer-link" target="_blank" rel="noopener">Instagram: @inspira.limpieza</a>
     </div>
   </div>
   <div class="container footer-bottom">
