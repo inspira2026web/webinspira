@@ -6,8 +6,7 @@
 (function () {
   "use strict";
 
-  /* WHATSAPP: reemplazar por el número real de Inspira, formato internacional sin "+" ni espacios (ej: 5491122334455) */
-  var WHATSAPP_NUMBER = "5491100000000";
+  var WHATSAPP_NUMBER = "5493425196247";
 
   function buildWhatsAppLink(message) {
     var encoded = encodeURIComponent(message || "Hola, quiero más información sobre Inspira Jardinería y Paisajismo.");
