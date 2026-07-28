@@ -74,6 +74,7 @@
     var root = document.getElementById("results-carousel");
     if (!root) return;
 
+    var viewport = root.querySelector(".carousel-viewport");
     var track = root.querySelector(".carousel-track");
     var slides = Array.prototype.slice.call(root.querySelectorAll(".carousel-slide"));
     var prevBtn = root.querySelector(".carousel-prev");
@@ -93,12 +94,26 @@
     });
     var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll(".carousel-dot"));
 
+    function updateHeight() {
+      var img = slides[index].querySelector("img");
+      if (!img) return;
+      var w = parseFloat(img.getAttribute("width"));
+      var h = parseFloat(img.getAttribute("height"));
+      if (!w || !h) return;
+      var naturalHeight = viewport.clientWidth * (h / w);
+      var maxHeight = Math.min(window.innerHeight * 0.7, 640);
+      viewport.style.height = Math.min(naturalHeight, maxHeight) + "px";
+    }
+
     function render() {
       track.style.transform = "translateX(-" + index * 100 + "%)";
       dots.forEach(function (dot, i) {
         dot.classList.toggle("is-active", i === index);
       });
+      updateHeight();
     }
+
+    window.addEventListener("resize", updateHeight);
 
     function goTo(i) {
       index = (i + slides.length) % slides.length;
