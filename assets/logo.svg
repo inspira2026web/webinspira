@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Inspira Jardinería y Paisajismo">
+  <circle cx="100" cy="100" r="97" fill="#4c6b64" stroke="#a9c9bc" stroke-width="5"/>
+  <path d="M42 78 Q58 66 74 78 T106 78 T138 78" fill="none" stroke="#f5f6ef" stroke-width="6" stroke-linecap="round"/>
+  <path d="M38 96 Q56 82 74 96 T110 96 T146 96" fill="none" stroke="#f5f6ef" stroke-width="6" stroke-linecap="round"/>
+  <path d="M34 114 Q54 98 74 114 T114 114 T154 114" fill="none" stroke="#f5f6ef" stroke-width="6" stroke-linecap="round"/>
+  <text x="100" y="148" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" letter-spacing="3" fill="#f5f6ef">INSPIRA</text>
+</svg>
